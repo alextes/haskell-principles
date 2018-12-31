@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b8fa1f1a4e19d403610f594e0e73bf64f8c36497dfcf571db3c6fcd3f42a8685
+-- hash: e12221d9ef697261f0f341f5d2afc92aeb8ed876bd5a129075653ae5eb9431ea
 
 name:           haskell-principles
 version:        0.1.0.0
@@ -15,7 +15,6 @@ author:         Alexander Tesfamichael
 maintainer:     alex.tesfamichael@gmail.com
 copyright:      2018 Alexander Tesfamichael
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
@@ -28,6 +27,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Sing
       TypeCheck
   other-modules:
       Paths_haskell_principles
