@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ffb01876ddd47355bdfda19c2031ee0e158c9943dce2297252e575ce18678ebb
+-- hash: b8fa1f1a4e19d403610f594e0e73bf64f8c36497dfcf571db3c6fcd3f42a8685
 
 name:           haskell-principles
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Lib
+      TypeCheck
   other-modules:
       Paths_haskell_principles
   hs-source-dirs:

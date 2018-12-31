@@ -1,6 +1,7 @@
 module Main where
 
 import Lib
+import TypeCheck
 
 main :: IO ()
-main = someFunc
+main = undefined
