@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e12221d9ef697261f0f341f5d2afc92aeb8ed876bd5a129075653ae5eb9431ea
+-- hash: 760c577f5c56733519f9f580b47cefbd64fd28619cc6755707ebc4bd9dcb922c
 
 name:           haskell-principles
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
       Lib
       Sing
       TypeCheck
+      TypeKwonDo
   other-modules:
       Paths_haskell_principles
   hs-source-dirs:
