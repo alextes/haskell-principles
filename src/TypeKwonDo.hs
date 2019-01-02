@@ -92,3 +92,47 @@ instance (Eq a, Eq b) => Eq (EitherOr a b) where
   (==) (Hello a) (Hello b)     = a == b
   (==) (Goodbye a) (Goodbye b) = a == b
   (==) _ _                     = False
+
+newtype Person =
+  Person Bool
+  deriving (Show)
+
+printPerson :: Person -> IO ()
+printPerson = print
+
+data Mood
+  = Blah
+  | Woot
+  deriving (Eq, Show)
+
+settleDown x =
+  if x == Woot
+    then Blah
+    else x
+
+type Subject = String
+
+type Verb = String
+
+type Object = String
+
+data Sentence =
+  Sentence Subject
+           Verb
+           Object
+  deriving (Eq, Show)
+
+s1 = Sentence "dogs" "drool"
+
+s2 = Sentence "Julie" "loves" "dogs"
+
+young :: String -> Char
+young = minimum
+
+chk :: Eq b => (a -> b) -> a -> b -> Bool
+chk f a b = f a == b
+
+-- Hint: use some arithmetic operation to
+-- combine values of type 'b'. Pick one.
+arith :: Num b => (a -> b) -> Integer -> a -> b
+arith f num a = f a ^ num
