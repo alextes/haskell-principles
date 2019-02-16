@@ -17,7 +17,7 @@ foldBool a b c =
     True  -> a
     False -> b
 
-foldBool' :: a -> a -> Bool -> a
-foldBool' a b c
-  | _ _ True = a
-  | _ _ False = b
+-- foldBool' :: a -> a -> Bool -> a
+-- foldBool' a b c
+--   | _ _ True = a
+--   | _ _ False = b

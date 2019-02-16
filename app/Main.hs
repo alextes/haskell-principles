@@ -1,8 +1,9 @@
 module Main where
 
 import           Lib
-import           TypeCheck
+import           Lists
 import           Sing
+import           TypeCheck
 import           TypeKwonDo
 
 main :: IO ()

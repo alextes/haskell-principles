@@ -4,11 +4,11 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 760c577f5c56733519f9f580b47cefbd64fd28619cc6755707ebc4bd9dcb922c
+-- hash: b1b922702c695f88fe9a346d0444f6c39f80d8b0817477d75f0ee2a12e4612f8
 
 name:           haskell-principles
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/alextes/haskell-principles#readme>
+description:    Repo for Haskell From First Principles exercises.
 homepage:       https://github.com/alextes/haskell-principles#readme
 bug-reports:    https://github.com/alextes/haskell-principles/issues
 author:         Alexander Tesfamichael
@@ -18,7 +18,6 @@ license:        BSD3
 build-type:     Simple
 extra-source-files:
     README.md
-    ChangeLog.md
 
 source-repository head
   type: git
@@ -27,9 +26,12 @@ source-repository head
 library
   exposed-modules:
       Lib
+      Lists
+      Recursion
       Sing
       TypeCheck
       TypeKwonDo
+      WordNumber
   other-modules:
       Paths_haskell_principles
   hs-source-dirs:
