@@ -12,10 +12,7 @@ tensDigit' x = snd $ divMod xLast 10
     xLast = x `div` 10
 
 foldBool :: a -> a -> Bool -> a
-foldBool a b c =
-  case c of
-    True  -> a
-    False -> b
+foldBool a b c = if c then a else b
 
 -- foldBool' :: a -> a -> Bool -> a
 -- foldBool' a b c
