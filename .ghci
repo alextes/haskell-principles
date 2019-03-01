@@ -1,2 +1,3 @@
-:set -isrc
-:load app/Main.hs
+:set -Wall -Werror
+:set isrc
+:load Main
