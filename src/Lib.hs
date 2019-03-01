@@ -1,7 +1,5 @@
 module Lib where
 
-import Data.List (nub)
-
 tensDigit :: Integral a => a -> a
 tensDigit x = d
   where
@@ -26,10 +24,11 @@ data BinaryTree a
          (BinaryTree a)
   deriving (Eq, Ord, Show)
 
+tree :: Num a => BinaryTree a
 tree = Node Leaf 1 Leaf
 
 mapBTree :: (a -> b) -> BinaryTree a -> BinaryTree b
-mapBTree f Leaf = Leaf
+mapBTree _ Leaf = Leaf
 mapBTree f (Node aTree val bTree) =
   Node (mapBTree f aTree) (f val) (mapBTree f bTree)
 
@@ -39,3 +38,47 @@ foldBTree f b (Node left a right) = f a bOfLeftRight
   where
     bOfLeftRight = foldBTree f bOfLeft right
     bOfLeft = foldBTree f b left
+
+isJust :: Maybe a -> Bool
+isJust Nothing  = False
+isJust (Just _) = True
+
+isNothing :: Maybe a -> Bool
+isNothing Nothing  = True
+isNothing (Just _) = False
+
+mayybee :: b -> (a -> b) -> Maybe a -> b
+mayybee b _ Nothing  = b
+mayybee _ f (Just a) = f a
+
+fromMaybe :: a -> Maybe a -> a
+fromMaybe a = mayybee a id
+
+listToMaybe :: [a] -> Maybe a
+listToMaybe []    = Nothing
+listToMaybe (x:_) = Just x
+
+maybeToList :: Maybe a -> [a]
+maybeToList Nothing  = []
+maybeToList (Just x) = [x]
+
+catMaybes :: [Maybe a] -> [a]
+catMaybes [] = []
+catMaybes (x:xs) =
+  case x of
+    Nothing -> catMaybes xs
+    Just x' -> x' : catMaybes xs
+
+flipMaybe :: [Maybe a] -> Maybe [a]
+flipMaybe [] = Just []
+flipMaybe [x] =
+  case x of
+    Nothing -> Nothing
+    Just x' -> Just [x']
+flipMaybe (x:xs) =
+  case flipMaybe xs of
+    Nothing -> Nothing
+    Just xs' ->
+      case x of
+        Nothing -> Nothing
+        Just x' -> Just (x' : xs')
